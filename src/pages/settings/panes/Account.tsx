@@ -211,7 +211,7 @@ export const Account = observer(() => {
                 action={<Text id="general.unavailable" />}>
                 <Text id="app.settings.pages.account.manage.disable" />
             </CategoryButton>
-            <a href="mailto:contact@revolt.chat?subject=Delete%20my%20account">
+            <a href="mailto:ops@chatnet.me?subject=Delete%20my%20account">
                 <CategoryButton
                     icon={<Trash size={24} color="var(--error)" />}
                     description={
