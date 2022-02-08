@@ -481,7 +481,7 @@
                 "signed_out": "You were signed out!",
                 "token_reveal": "{{name}}'s Token",
                 "onboarding": {
-                    "welcome": "ChatNet",
+                    "welcome": "Welcome To",
                     "pick": "Pick a username that you want people to be able to find you by, this can be changed later in settings."
                 },
                 "prompt": {
