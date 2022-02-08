@@ -13,9 +13,9 @@
     "login": {
         "title": "Login",
         "welcome": "Welcome back!",
-        "subtitle": "Sign into Revolt test",
+        "subtitle": "Sign into ChatNet",
         "welcome2": "Hello!",
-        "subtitle2": "Create an account test",
+        "subtitle2": "Create an account",
         "register": "Register",
         "username": "Username",
         "email": "Email",
@@ -33,7 +33,7 @@
         "reset": "Reset password",
         "set_password": "Set new password",
         "remembered": "Go back to login",
-        "new": "New to Revolt?",
+        "new": "New to ChatNet?",
         "existing": "Already have an account?",
         "create": "Create a new account",
         "missing_verification": "Didn't receive an email?",
@@ -76,11 +76,11 @@
             "goto-testers_desc": "You can report issues and discuss improvements with us directly here.",
             "donate": "Donate to Revolt",
             "donate_desc": "Support the project by donating - thank you!",
-            "feedback": "Give feedback on Revolt",
+            "feedback": "Give feedback on ChatNet",
             "feedback_desc": "Let us know how we can improve our app by giving us feedback.",
             "settings": "Open settings",
             "settings-tooltip": "You can also right-click the user icon in the top left, or left click it if you're already home.",
-            "discover": "Discover Revolt",
+            "discover": "Discover ChatNet",
             "discover_desc": "Find a community based on your hobbies or interests.",
             "group": "Create a group",
             "group_desc": "Invite all of your friends, some cool bots, and throw a big party."
@@ -371,7 +371,7 @@
                     "title": "Feedback",
                     "description": "Submit feedback",
                     "suggest": "Submit feature suggestion",
-                    "suggest_desc": "Suggest new Revolt features on GitHub discussions.",
+                    "suggest_desc": "Suggest new ChatNet features on GitHub discussions.",
                     "issue": "Create a new issue",
                     "issue_desc": "To help us more easily triage issues, you can create an issue on GitHub.",
                     "bug": "Bug Tracker",
@@ -481,7 +481,7 @@
                 "signed_out": "You were signed out!",
                 "token_reveal": "{{name}}'s Token",
                 "onboarding": {
-                    "welcome": "Welcome to",
+                    "welcome": "ChatNet",
                     "pick": "Pick a username that you want people to be able to find you by, this can be changed later in settings."
                 },
                 "prompt": {
@@ -578,7 +578,7 @@
             "requires_online": "You need to be online to view this.",
             "invite": {
                 "invited_by": "Invited by {{user}}",
-                "login": "Login to Revolt",
+                "login": "Login to ChatNet",
                 "accept": "Accept Invite",
                 "user_count": "{{member_count}} users",
                 "invalid": "Invalid invite!",
