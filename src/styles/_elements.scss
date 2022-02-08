@@ -1,0 +1,77 @@
+:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+::-webkit-scrollbar {
+    width: var(--scrollbar-thickness);
+    height: var(--scrollbar-thickness);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    min-width: 30px;
+    min-height: 30px;
+
+    background-clip: content-box;
+    background: var(--scrollbar-thumb);
+}
+
+[data-scroll-offset] {
+    overflow-y: scroll;
+}
+
+[data-scroll-offset="with-padding"],
+[data-scroll-offset] .with-padding {
+    padding-top: var(--header-height);
+}
+
+[data-scroll-offset]::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    border-top: var(--header-height) solid transparent;
+}
+
+[data-avoids-navigation]::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    border-bottom: var(--effective-bottom-offset) solid transparent;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+::selection {
+    background: var(--foreground);
+    color: var(--background);
+}
+
+::-moz-selection {
+    background: var(--foreground);
+    color: var(--background);
+}
+
+::-webkit-selection {
+    background: var(--foreground);
+    color: var(--background);
+}
+
+a,
+a:link,
+a:visited,
+a:hover {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    flex-grow: 1;
+}
+
+foreignObject > svg {
+    vertical-align: top !important;
+}

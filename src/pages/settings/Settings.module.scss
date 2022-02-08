@@ -1,0 +1,314 @@
+/* Settings animations */
+@keyframes open {
+    0% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes close {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+/* Settings CSS */
+.settings[data-mobile="true"] {
+    flex-direction: column;
+    background: var(--primary-header);
+
+    .sidebar,
+    .content {
+        background: var(--primary-background);
+    }
+
+    /* Sidebar */
+    .sidebar {
+        overflow-y: auto;
+
+        .container {
+            padding: 12px 10px 80px;
+            min-width: 218px;
+        }
+
+        .scrollbox {
+            width: 100%;
+        }
+        .version {
+            place-items: center;
+        }
+    }
+
+    /* Content */
+    .content {
+        ::-webkit-scrollbar-thumb {
+            border-bottom: none;
+        }
+
+        .scrollbox {
+            overflow: auto;
+        }
+
+        .contentcontainer {
+            max-width: unset !important;
+            padding: 20px 10px 80px;
+        }
+    }
+}
+
+.settings:not([data-mobile="true"]) {
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    animation: open 340ms cubic-bezier(0.2, 0.9, 0.5, 1.16) forwards;
+
+    &.closing {
+        animation: close 340ms cubic-bezier(0.5, 0, 0.8, 0.11);
+    }
+
+    .scrollbox::-webkit-scrollbar-thumb {
+        background-clip: content-box;
+        border-top: 80px solid transparent;
+    }
+
+    .container {
+        max-width: 300px;
+    }
+}
+
+.settings {
+    height: 100%;
+    display: flex;
+    user-select: none;
+    flex-direction: row;
+    background: var(--primary-background);
+
+    .scrollbox {
+        overflow-y: scroll;
+        visibility: hidden;
+        transition: visibility 0.1s;
+    }
+
+    .container,
+    .contentcontainer,
+    .scrollbox:hover,
+    .scrollbox:focus {
+        visibility: visible;
+    }
+
+    .sidebar {
+        flex: 1 0 218px;
+        display: flex;
+        justify-content: flex-end;
+        background: var(--secondary-background);
+
+        .container {
+            min-width: 218px;
+
+            padding: 80px 8px;
+            display: flex;
+            gap: 2px;
+            flex-direction: column;
+        }
+
+        .divider {
+            height: 30px;
+        }
+
+        .donate {
+            color: goldenrod !important;
+        }
+
+        .logOut,
+        .deleteServer {
+            color: var(--error) !important;
+        }
+
+        .version {
+            margin: 1rem 12px 0;
+            font-size: 0.625rem;
+            color: var(--secondary-foreground);
+            font-family: var(--monospace-font), monospace;
+            user-select: text;
+            display: grid;
+
+            > div {
+                gap: 2px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .content {
+        flex: 1 1 800px;
+        display: flex;
+        overflow-y: auto;
+
+        .scrollbox {
+            display: flex;
+            flex-grow: 1;
+            align-items: stretch;
+        }
+
+        .contentcontainer {
+            display: flex;
+            gap: 13px;
+            max-width: 740px;
+            padding: 80px 32px;
+            width: 100%;
+            flex-direction: column;
+
+            // This prevents members, invites and ban list from being able to properly display.
+            // height: fit-content;
+        }
+
+        details {
+            margin: 14px 0;
+        }
+
+        /*a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }*/
+
+        hr {
+            height: 1px;
+            width: calc(100% - 10px);
+            background: var(--secondary-header);
+            margin: 18px auto;
+            flex-grow: 0;
+        }
+
+        h1 {
+            margin: 0;
+            line-height: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            color: var(--secondary-foreground);
+            /*margin-bottom: 10px;*/
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        h4 {
+            margin: 4px 2px;
+            font-size: 0.8125rem;
+            color: var(--tertiary-foreground);
+            text-transform: uppercase;
+        }
+
+        h5 {
+            margin-top: 0;
+            font-size: 0.75rem;
+            font-weight: 500;
+
+            > a:hover {
+                text-decoration: underline;
+            }
+        }
+
+        h6 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        details {
+            summary {
+                font-size: 0.8125rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--secondary-foreground);
+                cursor: pointer;
+            }
+        }
+
+        .footer {
+            border-top: 1px solid;
+            margin: 0;
+            padding-top: 5px;
+            font-size: 0.875rem;
+            color: var(--secondary-foreground);
+        }
+    }
+
+    .action {
+        flex-grow: 1;
+        padding: 80px 8px;
+        visibility: visible;
+        position: sticky;
+        top: 0;
+
+        &:after {
+            content: "ESC";
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+            width: 40px;
+            opacity: 0.5;
+            font-size: 0.75rem;
+        }
+
+        .closeButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius-half);
+            height: 40px;
+            width: 40px;
+            border: 3px solid var(--tertiary-background);
+            cursor: pointer;
+
+            svg {
+                color: var(--secondary-foreground);
+            }
+            &:hover {
+                background: var(--secondary-header);
+            }
+            &:active {
+                transform: translateY(2px);
+            }
+        }
+    }
+}
+
+@media (pointer: coarse) {
+    .scrollbox {
+        visibility: visible !important;
+        overflow-y: auto;
+    }
+}

@@ -1,0 +1,138 @@
+.embed {
+    margin: 0.2em 0;
+
+    iframe {
+        border: none;
+        border-radius: var(--border-radius);
+        width: 100%;
+    }
+
+    &.image {
+        cursor: pointer;
+    }
+
+    &.website {
+        gap: 6px;
+        display: flex;
+        flex-direction: row;
+
+        > div:nth-child(1) {
+            gap: 6px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        border-inline-start-width: 4px;
+        border-inline-start-style: solid;
+
+        padding: 12px;
+        width: fit-content;
+        background: var(--primary-header);
+        border-radius: var(--border-radius);
+
+        .siteinfo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            user-select: none;
+
+            .favicon {
+                width: 14px;
+                height: 14px;
+                flex-shrink: 0;
+            }
+
+            .site {
+                font-size: 11px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                color: var(--secondary-foreground);
+            }
+        }
+
+        .author {
+            font-size: 1em;
+            color: var(--primary-text);
+            display: inline-block;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .title {
+            display: inline-block;
+            font-size: 1.1em;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .description {
+            margin: 0;
+            font-size: 12px;
+            overflow: hidden;
+            display: -webkit-box;
+            white-space: pre-wrap;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+        }
+
+        .footer {
+            font-size: 12px;
+        }
+
+        img.image {
+            cursor: pointer;
+            object-fit: contain;
+            border-radius: var(--border-radius);
+        }
+
+        a {
+            cursor: pointer;
+        }
+    }
+}
+
+// TODO: unified actions css (see attachment.module.scss for other actions css)
+.actions {
+    display: grid;
+    grid-template:
+        "name open" auto
+        "size open" auto
+        / minmax(20px, 1fr) min-content;
+
+    align-items: center;
+    column-gap: 12px;
+
+    width: 100%;
+    padding: 8px;
+    overflow: none;
+
+    color: var(--foreground);
+    background: var(--secondary-background);
+
+    span {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .filesize {
+        grid-area: size;
+
+        font-size: 10px;
+        color: var(--secondary-foreground);
+    }
+
+    .openIcon {
+        grid-area: open;
+    }
+}

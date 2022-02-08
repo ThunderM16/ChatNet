@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+dist
+dist_injected
+dist-ssr
+*.local
+*.log
+/.idea
+
+public/assets
+public/assets_*
+!public/assets_default
+
+.vscode/chrome_data

@@ -1,0 +1,41 @@
+:root {
+    /**
+     * Appearance
+     */
+    --ligatures: none;
+    --text-size: 14px;
+    --font: "Open Sans";
+    --sidebar-active: var(--secondary-background);
+
+    /**
+     * Native
+     */
+    --titlebar-height: 29px;
+    --titlebar-action-padding: 8px;
+    --titlebar-logo-color: var(--secondary-foreground);
+
+    /**
+     * Layout
+     */
+    --app-height: 100vh;
+    --scrollbar-thickness: 3px;
+    --scrollbar-thickness-ff: thin;
+    --border-radius: 6px;
+    --border-radius-half: 50%;
+
+    --border-radius-user-icon: var(--border-radius-half);
+    --border-radius-channel-icon: var(--border-radius-half);
+    --border-radius-server-icon: var(--border-radius-half);
+
+    --input-border-width: 2px;
+    --textarea-padding: 16px;
+    --textarea-line-height: 20px;
+    --message-box-padding: 14px 14px 14px 0;
+
+    --attachment-max-width: 400px;
+    --attachment-max-height: 300px;
+    --attachment-default-width: 400px;
+    --attachment-max-text-width: 800px;
+
+    --bottom-navigation-height: 50px;
+}

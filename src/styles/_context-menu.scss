@@ -1,0 +1,103 @@
+.preact-context-menu .context-menu {
+    z-index: 10000;
+    min-width: 190px;
+    font-weight: 500;
+    padding: 6px 8px;
+    user-select: none;
+    font-size: 0.875rem;
+    color: var(--secondary-foreground);
+    border-radius: var(--border-radius);
+    background-color: rgba(
+        var(--primary-background-rgb),
+        max(var(--min-opacity), 0.9)
+    );
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.05);
+
+    > span,
+    .main > span {
+        gap: 6px;
+        margin: 2px 0;
+        display: flex;
+        padding: 6px 8px;
+        align-items: center;
+        white-space: nowrap;
+        border-radius: calc(var(--border-radius) / 2);
+
+        &:not([data-disabled="true"]) {
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(
+                    var(--secondary-background-rgb),
+                    max(var(--min-opacity), 0.75)
+                );
+                backdrop-filter: blur(10px);
+            }
+        }
+
+        .tip {
+            flex-grow: 1;
+            font-size: 0.65rem;
+            text-align: right;
+            color: var(--tertiary-foreground);
+        }
+    }
+}
+
+.context-menu.Status {
+    .header {
+        gap: 8px;
+        display: flex;
+        padding: 6px 8px;
+        font-weight: 600;
+        align-items: center;
+        color: var(--foreground);
+
+        .main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+
+            .username {
+                > div {
+                    cursor: pointer;
+                    width: fit-content;
+                }
+            }
+        }
+
+        .status {
+            cursor: pointer;
+            max-width: 132px;
+            font-size: 0.625rem;
+            color: var(--secondary-foreground);
+
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: var(--border-radius-half);
+
+        &.online {
+            background: var(--status-online);
+        }
+
+        &.idle {
+            background: var(--status-away);
+        }
+
+        &.busy {
+            background: var(--status-busy);
+        }
+
+        &.invisible {
+            background: var(--status-invisible);
+        }
+    }
+}

@@ -1,0 +1,192 @@
+.title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.list {
+    padding: 0 10px 10px 10px;
+    user-select: none;
+
+    &[data-empty="true"] {
+        img {
+            height: 120px;
+            border-radius: var(--border-radius);
+        }
+
+        gap: 16px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &[data-mobile="true"] {
+        padding-bottom: var(--bottom-navigation-height);
+    }
+}
+
+.friend {
+    height: 60px;
+    display: flex;
+    padding: 0 10px;
+    cursor: pointer;
+    align-items: center;
+    border-radius: var(--border-radius);
+
+    &:hover {
+        background: var(--secondary-background);
+
+        :global(.button) {
+            background-color: var(--primary-background);
+        }
+    }
+
+    .name {
+        flex-grow: 1;
+        margin: 0 12px;
+        font-size: 16px;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .subtext {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--tertiary-foreground);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .actions {
+        display: flex;
+        gap: 12px;
+
+        .button {
+            width: 36px;
+            height: 36px;
+
+            &:hover.error {
+                background: var(--error);
+            }
+
+            &:hover.success {
+                background: var(--success);
+            }
+        }
+    }
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background: var(--primary-background);
+}
+
+.title {
+    flex-grow: 1;
+}
+
+.pending {
+    padding: 1em;
+    display: flex;
+    cursor: pointer;
+    margin-top: 1em;
+    align-items: center;
+    flex-direction: row;
+    border-radius: var(--border-radius);
+    background: var(--secondary-background);
+
+    svg {
+        flex-shrink: 0;
+    }
+
+    .avatars {
+        display: flex;
+        flex-shrink: 0;
+        margin-inline-end: 15px;
+
+        svg:not(:first-child) {
+            position: relative;
+            margin-left: -32px;
+        }
+    }
+
+    .details {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+
+        > div {
+            font-size: 16px;
+            font-weight: 800;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            min-width: 0;
+
+            .title {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            span {
+                width: 1.5em;
+                height: 1.5em;
+                color: white;
+                flex-shrink: 0;
+                font-size: 12px;
+                align-items: center;
+                display: inline-flex;
+                justify-content: center;
+                background: var(--error);
+                border-radius: var(--border-radius-half);
+            }
+        }
+
+        .from {
+            .user {
+                font-weight: 600;
+            }
+        }
+
+        > span {
+            font-weight: 400;
+            font-size: 12px;
+            color: var(--tertiary-foreground);
+
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+}
+
+// Hide the remove friend button on smaller screens.
+@media only screen and (max-width: 768px) {
+    .list .remove {
+        display: none;
+    }
+}

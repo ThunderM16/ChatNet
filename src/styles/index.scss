@@ -1,0 +1,24 @@
+@import "variables";
+@import "context-menu";
+@import "elements";
+@import "page";
+
+@import "react-overlapping-panels/dist";
+@import "tippy.js/dist/tippy.css";
+@import "tippy.js/animations/shift-away.css";
+
+.tippy-box {
+    color: var(--foreground);
+    background: var(--tooltip, var(--background));
+}
+
+.tippy-content {
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    max-width: 200px;
+}
+
+.tippy-arrow {
+    color: var(--tooltip);
+}

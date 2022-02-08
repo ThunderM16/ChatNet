@@ -1,0 +1,163 @@
+.overview {
+    .row {
+        gap: 20px;
+        display: flex;
+
+        .name {
+            flex-grow: 1;
+
+            h3 {
+                margin-top: 0;
+            }
+
+            input {
+                width: 100%;
+            }
+        }
+    }
+
+    .markdown {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+        gap: 4px;
+
+        svg {
+            flex-shrink: 0;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h5 {
+            margin: 0;
+        }
+    }
+}
+
+.userList {
+    gap: 8px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    .subtitle {
+        gap: 8px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        text-transform: uppercase;
+        color: var(--secondary-foreground);
+        font-weight: 700;
+
+        .reason {
+            text-align: center;
+        }
+    }
+
+    .reason {
+        flex: 2;
+    }
+
+    .invite,
+    .ban,
+    .member {
+        gap: 8px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background: var(--secondary-background);
+
+        span,
+        code {
+            flex: 1;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        code {
+            font-size: 1.4em;
+            user-select: all;
+        }
+
+        span {
+            gap: 8px;
+            display: flex;
+            color: var(--secondary-foreground);
+        }
+
+        &[data-deleting="true"] {
+            opacity: 0.5;
+        }
+    }
+
+    .member {
+        cursor: pointer;
+
+        .chevron {
+            transition: 0.2s ease all;
+        }
+
+        &:not([data-open="true"]) .chevron {
+            transform: rotateZ(90deg);
+        }
+    }
+
+    .memberView {
+        padding: 10px;
+        background: var(--background);
+    }
+
+    .virtual {
+        flex-grow: 1;
+    }
+}
+
+.roles {
+    gap: 12px;
+    height: 100%;
+    display: flex;
+
+    .list {
+        width: 160px;
+        flex-shrink: 0;
+        overflow-y: scroll;
+    }
+
+    .permissions {
+        flex-grow: 1;
+        padding: 0 8px;
+        overflow-y: scroll;
+    }
+
+    .title {
+        gap: 8px;
+        display: flex;
+        margin-bottom: 1em;
+        align-items: center;
+
+        h1,
+        h2 {
+            margin: 0;
+            min-width: 0;
+            flex-grow: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        svg {
+            cursor: pointer;
+        }
+    }
+
+    .actions {
+        gap: 8px;
+        display: flex;
+        padding: 8px 0;
+    }
+}

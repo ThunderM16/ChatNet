@@ -1,0 +1,680 @@
+.user {
+    .banner {
+        position: relative;
+        margin-top: 8px;
+        margin-bottom: 15px;
+        gap: 16px;
+        width: 100%;
+        padding: 12px 10px;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        border-radius: var(--border-radius);
+
+        .container {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .userContainer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+
+            .username {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+
+        .userDetail {
+            display: flex;
+            flex-grow: 1;
+            gap: 2px;
+            flex-direction: column;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .avatar {
+            cursor: pointer;
+            transition: 0.2s ease filter;
+
+            &:hover {
+                filter: brightness(80%);
+            }
+        }
+
+        .userid {
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--tertiary-foreground);
+
+            > :nth-child(2) {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            a {
+                color: inherit;
+                cursor: pointer;
+
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 300px) {
+        .avatar {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 300px) {
+        .tinyavatar {
+            display: none;
+        }
+    }
+
+    .details {
+        display: flex;
+        padding: 1em 0;
+        gap: 10px;
+        flex-direction: column;
+
+        /*border-top: 1px solid var(--secondary-header);
+        border-width: 100%;*/
+
+        > div {
+            gap: 12px;
+            /*padding: 4px;*/
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            background: var(--secondary-header);
+            border-radius: var(--border-radius);
+
+            > svg {
+                flex-shrink: 0;
+            }
+        }
+
+        p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--tertiary-foreground);
+        }
+    }
+
+    .preview {
+        background: var(--background);
+        border-radius: var(--border-radius);
+        width: 100%;
+        display: flex;
+        display: grid;
+        place-items: center;
+        grid-template-columns: minmax(auto, 100%);
+
+        > div {
+            width: 100%;
+            max-width: 560px;
+            transform: scale(0.9);
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .preview {
+            background: none;
+            padding: 0;
+        }
+    }
+
+    .badgePicker {
+        display: flex;
+        margin-bottom: 20px;
+
+        //padding-bottom: 8px;
+        position: relative;
+
+        .container {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+        }
+
+        .check {
+            cursor: pointer;
+
+            flex-shrink: 0;
+            height: 50px;
+            width: 50px;
+            background: var(--secondary-background);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:nth-child(2) {
+                border: 3px solid var(--accent);
+            }
+
+            &:nth-child(1) {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    // TOFIX: need to merge overlay 1 and 2 later
+
+    .overlay {
+        position: absolute;
+        flex-shrink: 0;
+        width: 8px;
+        background: red;
+        height: 100%;
+
+        background: linear-gradient(
+            to right,
+            var(--primary-background),
+            transparent
+        );
+    }
+
+    .overlay2 {
+        position: absolute;
+        right: 0;
+        flex-shrink: 0;
+        width: 8px;
+        background: red;
+        height: 100%;
+
+        background: linear-gradient(
+            to left,
+            var(--primary-background),
+            transparent
+        );
+    }
+
+    .row {
+        gap: 20px;
+        display: flex;
+        margin-bottom: 30px;
+
+        .pfp {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .background {
+            flex-grow: 1;
+            width: 100%;
+        }
+    }
+
+    .markdown {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+        gap: 4px;
+
+        svg {
+            flex-shrink: 0;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h5 {
+            margin: 0;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .row {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        gap: 12px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .user {
+        .banner {
+            gap: 18px;
+            padding: 0;
+            flex-direction: column;
+
+            > button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.audio {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .audioRow {
+        display: flex;
+        gap: 20px;
+
+        .select {
+            flex-direction: column;
+            width: 50%;
+        }
+    }
+    .audioBox {
+        display: flex;
+        flex-direction: column;
+        /*gap: 15px;*/
+        align-items: center;
+
+        > button {
+            margin-top: 20px;
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        .audioRow {
+            flex-direction: column;
+
+            .select {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.opus {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: -12px;
+
+    > img {
+        height: 24px;
+    }
+}
+
+.notches {
+    margin: 10px 2px 0;
+    display: flex;
+    width: 100%;
+    border-radius: 60px;
+    overflow: hidden;
+    justify-content: space-between;
+    gap: 5px;
+
+    > div {
+        height: 8px;
+        width: 24px;
+        background: var(--secondary-background);
+        border-radius: 2px;
+    }
+}
+
+.sessions {
+    .session {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-direction: row;
+
+        .detail {
+            display: flex;
+            gap: 12px;
+            flex-grow: 1;
+
+            svg {
+                margin-top: 1px;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    .entry {
+        padding: 12px;
+        display: flex;
+        margin: 10px 0;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: var(--border-radius);
+        background: var(--secondary-header);
+
+        &[data-active="true"] {
+            color: var(--primary-background);
+            background: var(--accent);
+            margin-bottom: 25px;
+
+            .session .detail .info > input {
+                &:focus {
+                    border-bottom: 2px solid var(--primary-background);
+                }
+            }
+        }
+
+        &[data-deleting="true"] {
+            opacity: 0.5;
+        }
+
+        .name {
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+        }
+
+        input {
+            background: transparent;
+            border: 0;
+            font-family: inherit;
+            font-size: 0.875rem;
+            padding: 0;
+            outline: 0;
+            border-radius: 0;
+            color: inherit;
+            width: 100%;
+
+            &:focus {
+                border-bottom: 2px solid var(--accent);
+            }
+
+            &[data-active="true"] {
+                border-bottom: 2px solid inherit;
+            }
+        }
+
+        .label {
+            margin-bottom: 8px;
+            color: var(--primary-text);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+
+            .name {
+                text-transform: capitalize;
+                text-overflow: ellipsis;
+            }
+
+            .time {
+                font-size: 0.75rem;
+                color: var(--teriary-text);
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+    }
+
+    > button {
+        margin-top: 20px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .session {
+            align-items: unset;
+            flex-direction: column;
+            gap: 16px;
+
+            > button {
+                width: 100%;
+            }
+        }
+
+        > button {
+            width: 100%;
+        }
+    }
+}
+
+.languages {
+    .list {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+        gap: 8px;
+
+        .entry {
+            display: flex;
+            height: 45px;
+            padding: 0 8px;
+            background: var(--secondary-header);
+            border-radius: var(--border-radius);
+            margin-top: 0;
+
+            &:hover {
+                background: var(--secondary-background);
+            }
+        }
+
+        .entry > span > span {
+            gap: 8px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+            .flag {
+                display: flex;
+
+                > div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                > img {
+                    height: 28px !important;
+                }
+            }
+
+            .description {
+                color: var(--primary-text);
+            }
+        }
+    }
+}
+
+.feedback .options {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.experiments {
+    height: calc(100% - 40px);
+
+    .empty {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.myBots {
+    margin-top: 10px;
+    .botList {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8px;
+        gap: 16px;
+    }
+
+    .botCard {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: var(--secondary-background);
+        padding: 12px;
+        border-radius: var(--border-radius);
+    }
+
+    .botSection {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        > h5 {
+            margin-bottom: 1em;
+        }
+        > h3 {
+            margin-bottom: 0;
+        }
+
+        details,
+        label {
+            margin-top: 0;
+        }
+    }
+
+    .infocontainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .infoheader {
+        gap: 8px;
+        width: 100%;
+        padding: 6px 5px;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        border-radius: var(--border-radius);
+
+        .container {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .userDetail {
+            display: flex;
+            flex-grow: 1;
+            gap: 2px;
+            flex-direction: column;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .username {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .avatar {
+            cursor: pointer;
+            transition: 0.2s ease filter;
+
+            &:hover {
+                filter: brightness(80%);
+            }
+        }
+
+        .userid {
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--tertiary-foreground);
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+
+            > :nth-child(2) {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            a {
+                color: inherit;
+                cursor: pointer;
+
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .buttonRow {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .infocontainer {
+            flex-direction: column;
+
+            > button {
+                width: 100%;
+            }
+        }
+
+        .buttonRow {
+            flex-direction: column;
+        }
+    }
+}
+
+section {
+    margin-bottom: 20px;
+}
