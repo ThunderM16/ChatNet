@@ -62,23 +62,23 @@ export default defineConfig({
                 theme_color: "#101823",
                 icons: [
                     {
-                        src: `/assets/icons/android-chrome-192x192.png`,
+                        src: `/assets/logo_round.png`,
                         type: "image/png",
                         sizes: "192x192",
                     },
                     {
-                        src: `/assets/icons/android-chrome-512x512.png`,
+                        src: `/assets/logo_round.png`,
                         type: "image/png",
                         sizes: "512x512",
                     },
                     {
-                        src: `/assets/icons/monochrome.svg`,
+                        src: `/assets/logo_round.png`,
                         type: "image/svg+xml",
                         sizes: "48x48 72x72 96x96 128x128 256x256",
                         purpose: "monochrome",
                     },
                     {
-                        src: `/assets/icons/masking-512x512.png`,
+                        src: `/assets/logo_round.png`,
                         type: "image/png",
                         sizes: "512x512",
                         purpose: "maskable",
