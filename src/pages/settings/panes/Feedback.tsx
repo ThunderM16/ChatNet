@@ -11,7 +11,7 @@ export function Feedback() {
     return (
         <div className={styles.feedback}>
             <a
-                href="https://github.com/dislistme/revolt/discussions"
+                href="https://github.com/dislistme/revite/discussions"
                 target="_blank"
                 rel="noreferrer">
                 <CategoryButton
