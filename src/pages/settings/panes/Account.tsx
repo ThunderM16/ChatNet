@@ -215,7 +215,7 @@ export const Account = observer(() => {
                 <CategoryButton
                     icon={<Trash size={24} color="var(--error)" />}
                     description={
-                        "Delete your account, including all of your data. (sends an email to contact@chatnet.me)"
+                        "Delete your account, including all of your data. (sends an email to ops@chatnet.me)"
                     }
                     hover
                     action="external">
