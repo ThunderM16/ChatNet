@@ -1,4 +1,4 @@
-# ChatNet Being Built On Revolt API!
+# ChatNet.Me!
 https://app.chatnet.me
 
 https://discover.chatnet.me
