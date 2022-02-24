@@ -1,9 +1,7 @@
 # ChatNet.Me!
-https://app.chatnet.me
+https://chatnet.me
 
-https://discover.chatnet.me
-
-# (App.ChatNet.Me TO-DO/WIP)
+# (App.ChatNet.Me)
 
 ---
 If any of the above confuses you in any means please feel free to make [Discussions Forum](https://github.com/DisListMe/ChatNet/discussions)
@@ -21,5 +19,5 @@ If any of the above confuses you in any means please feel free to make [Discussi
 > Keep track of what devices are logged in and even log-out of another device from any currently signed in device.
 
 ## Voice Calling
-Yes we have voice calling but not screen sharing ChatNet On Revolt will take time to get to that milestone but maybe with your help! We all could get there sooner.
+> Yes we have voice calling but not screen sharing ChatNet On Revolt will take time to get to that milestone but maybe with your help! We all could get there sooner.
 
