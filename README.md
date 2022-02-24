@@ -20,4 +20,5 @@ If any of the above confuses you in any means please feel free to make [Discussi
 
 ## Voice Calling
 > Yes we have voice calling but not screen sharing ChatNet On Revolt will take time to get to that milestone but maybe with your help! We all could get there sooner.
-
+--- 
+> Want to host your own instance with your own API and Voice? Join The ChatNet Server @ https://app.chatnet.me/invite/3td0gR2y
